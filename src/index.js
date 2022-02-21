@@ -3,6 +3,8 @@ const run = async () => {
     require('dotenv').config()
 
     const app = require('express')()
+    const port = process.env.PORT || process.env.EXPRESS_PORT
+
     const mongoose = require('mongoose')
 
     const mongodbUser = process.env.MONGODB_USER
@@ -78,8 +80,8 @@ const run = async () => {
       console.log("Connected to mongo")
     });
 
-    const server = app.listen(process.env.EXPRESS_PORT, () => {
-        console.log(`[nodemon] App running on port ${process.env.EXPRESS_PORT}`)
+    const server = app.listen(port, () => {
+        console.log(`[nodemon] App running on port ${port}`)
     })
   
     return server;
