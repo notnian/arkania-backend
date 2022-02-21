@@ -1,6 +1,6 @@
 let chai = require("chai")
 let chaiHttp = require("chai-http")
-let app = require("../src/index.js")
+let app;
 
 // Select random entries to test (change entries from 1 to 3999)
 const entries = 10;
@@ -10,22 +10,26 @@ const data = shuffled.slice(0, entries);
 
 // Assertion style
 chai.should()
-
 chai.use(chaiHttp)
 
-describe('Roman numerals convert API', () => { 
-    describe("GET /ping", () => {
-        it("should return pong", (done) => {
-            chai.request(app)
-                .get("/ping")
-                .end((error, response) => {
-                    response.should.have.status(200)
-                    response.text.should.be.eq("pong")
-                    done(error)
-                })
-        })
-    })
+before(async() => {
+    app = await require('../src/index')
+})
 
+// To test my API quickly
+describe("GET /ping", () => {
+    it("should return pong", (done) => {
+        chai.request(app)
+            .get("/ping")
+            .end((error, response) => {
+                response.should.have.status(200)
+                response.text.should.be.eq("pong")
+                done(error)
+            })
+    })
+})
+
+describe('Roman numerals convert API', () => { 
     describe("GET /fromRoman", () => {
         data.forEach(([roman, integer]) => {
             it(`should return right integer (${integer}) from roman numeral ${roman}`, (done) => {
