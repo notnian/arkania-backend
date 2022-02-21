@@ -1,0 +1,25 @@
+{
+  "name": "arkania-backend",
+  "version": "1.0.0",
+  "description": "Convert roman numerals & Website archive",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notnian/arkania-backend"
+  },
+  "author": "Antonin",
+  "license": "GPL-3.0",
+  "scripts": {
+    "test": "mocha",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.1",
+    "nodemon": "^2.0.15"
+  }
+}
