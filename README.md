@@ -2,17 +2,21 @@
 
 J'ai utilisé Node.js pour l'API, les libs mocha et chai pour les tests et mongodb pour la question 2.
 
+Public API endpoint -> `https://arkania-backend.herokuapp.com`
+
 Pour avoir le projet sur la machine locale et lancer les tests unitaires :
+
+Avant de lancer les commandes, penser à copier le fichier .env_example en .env et le remplir comme il convient
 
 ```bash
 git clone https://github.com/notnian/arkania-backend
 
 # Utiliser npm, pnpm ou yarn au choix comme gestionnaire de paquets
-pnpm install
+npm install
 # Pour lancer les tests
-pnpm run test
+npm run test
 # Pour lancer un serveur sur le port 8080
-pnpm run dev
+npm run dev
 
 # Pour tester l'API avec curl (Q1)
 curl 'http://localhost:8080/fromRoman/XXVII' #Good

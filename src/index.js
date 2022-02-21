@@ -17,7 +17,7 @@ const run = async () => {
 
     // Function used for my tests
     app.get('/', (req, res) => {
-        res.send(JSON.stringify(process.env))
+        res.sendFile('index.html', {root: __dirname })
     })
     app.get('/ping', (req, res) => {
         res.send('pong')
