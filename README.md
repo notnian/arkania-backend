@@ -12,11 +12,11 @@ Avant de lancer les commandes, penser à copier le fichier .env_example en .env 
 git clone https://github.com/notnian/arkania-backend
 
 # Utiliser npm, pnpm ou yarn au choix comme gestionnaire de paquets
-npm install
+pnpm install
 # Pour lancer les tests
-npm run test
+pnpm run test
 # Pour lancer un serveur sur le port 8080
-npm run dev
+pnpm run dev
 
 # Pour tester l'API avec curl (Q1)
 curl 'http://localhost:8080/fromRoman/XXVII' #Good
