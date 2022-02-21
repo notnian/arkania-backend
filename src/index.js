@@ -4,7 +4,7 @@ const run = async () => {
 
     const app = require('express')()
     const port = process.env.PORT || process.env.EXPRESS_PORT
-
+    
     const mongoose = require('mongoose')
 
     const mongodbUser = process.env.MONGODB_USER
@@ -16,6 +16,9 @@ const run = async () => {
     const archiver = require('./archiver')
 
     // Function used for my tests
+    app.get('/', (req, res) => {
+        res.send(JSON.stringify(process.env))
+    })
     app.get('/ping', (req, res) => {
         res.send('pong')
     })
@@ -77,11 +80,11 @@ const run = async () => {
 
     db.once('open', () => {
       // Doesn't get here before the connection is established.
-      console.log("Connected to mongo")
+      console.log.bind(console, "Connected to mongo:")
     });
 
     const server = app.listen(port, () => {
-        console.log(`[nodemon] App running on port ${port}`)
+        console.log(`App running on port ${port}`)
     })
   
     return server;

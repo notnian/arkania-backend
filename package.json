@@ -11,7 +11,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "test": "mocha --recursive --exit",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "dependencies": {
     "axios": "^0.26.0",
